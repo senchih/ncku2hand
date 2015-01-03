@@ -2,9 +2,9 @@ ncku2hand
 =========
 
 ncku2hand core engine/n
-refresh_item.php改物件(用HNDL建構
-1/3
-DEBUG
+- refresh_item.php改物件(用HNDL建構
+- 1/3
+- DEBUG
 改用狀態變數才能大資料
 LOG REFRESH, TOKEN_USAGE
 SELECT改stmt
