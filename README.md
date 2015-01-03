@@ -1,7 +1,7 @@
 ncku2hand
 =========
 
-ncku2hand core engine
+ncku2hand core engine\n
 refresh_item.php改物件(用HNDL建構
 1/3
 DEBUG
