@@ -3,7 +3,7 @@ ncku2hand
 ncku2hand core engine
 
 ## 優先
-- 改用狀態變數才能大資料(one testbench
+- 用狀態變數
 - 研究前端
 
 ## 上線

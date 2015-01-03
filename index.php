@@ -11,11 +11,14 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        session_start();
+        // include libs
         require_once('..\\..\\inc\\config.php');
         require_once('class\\n2hDatabaseWrapper.php');
         require_once('class\\n2hFacebookConnector.php');
+        require_once('class\\updateManager.php');
         
+        // initialize
+        session_start();
         $fbHandler = new n2hFacebookConnector(
                 $_ncku2hand['fbAppId'],
                 $_ncku2hand['fbAppSecret'],
@@ -29,30 +32,44 @@ and open the template in the editor.
                 $_ncku2hand['dbName']
                 );
         
+        // main function
         if($fbHandler->loggedIn()) {
             // Case: in logging-in flow
             // get a long-lived token then update to db
             $token = $fbHandler->getExtendedToken();
             $dbHandler->updateToken($token);
-            echo 'Token updated<br>';
+            echo "<br>New token: " .$token. '<br>';
             echo '<a href="https://developers.facebook.com/tools/debug/accesstoken?q='.
                 $token . '">Check new token in Access Token Debugger</a><br>';
         } else {
             // Case: not in logging-in flow
             // check pre-saved access_token
             $token = $dbHandler->getToken();
-            echo "Token in the server: " .$token. '<br>';
+            if(isset($_GET['refresh'])) {
+                $fbHandler->setToken($token);
+                $manager = new updateManager(
+                        $dbHandler, 
+                        $fbHandler, 
+                        $_ncku2hand['groupId']
+                        );
+                $manager->refresh(2);
+            }
+            if(isset($_GET['clear'])) {
+                $dbHandler->clearItem();
+                echo 'Items in database are reseted.<br>';
+            }
+            echo "<br>Token in the server: " .$token. '<br>';
             echo '<a href="https://developers.facebook.com/tools/debug/accesstoken?q='.
                     $token.
                     '">Check this token in Access Token Debugger</a><br>';
             // show login url
             echo '<a href="' . $fbHandler->getLoginUrl() . '">request token from FACEBOOK</a><br>';
         }
-        echo '<a>end of the php</a><br>';
         ?>
         
-        <a href="refresh_item.php">refresh data</a><br>
-        <a href="clear_item.php">clear data(BE AWARE!!!)</a><br>
+        <a href="index.php?refresh">refresh data</a><br>
+        <a href="index.php?clear">clear data(!!!NOT REVERSABLE!!!)</a><br>
+        <br>
         <a href="http://localhost/phpmyadmin/">Database UI</a><br>
     </body>
 </html>
