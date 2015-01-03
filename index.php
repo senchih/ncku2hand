@@ -45,7 +45,11 @@ and open the template in the editor.
             // Case: not in logging-in flow
             // check pre-saved access_token
             $token = $dbHandler->getToken();
-            if(isset($_GET['refresh'])) {
+            if(filter_input(INPUT_GET, 'clear')) {
+                $dbHandler->clearItem();
+                echo 'Items in database are reseted.<br>';
+            }
+            if(filter_input(INPUT_GET, 'refresh')) {
                 $fbHandler->setToken($token);
                 $manager = new updateManager(
                         $dbHandler, 
@@ -53,10 +57,6 @@ and open the template in the editor.
                         $_ncku2hand['groupId']
                         );
                 $manager->refresh(10);
-            }
-            if(isset($_GET['clear'])) {
-                $dbHandler->clearItem();
-                echo 'Items in database are reseted.<br>';
             }
             echo "<br>Token in the server: " .$token. '<br>';
             echo '<a href="https://developers.facebook.com/tools/debug/accesstoken?q='.
@@ -67,8 +67,8 @@ and open the template in the editor.
         }
         ?>
         
-        <a href="index.php?refresh">refresh data</a><br>
-        <a href="index.php?clear">clear data(!!!NOT REVERSABLE!!!)</a><br>
+        <a href="index.php?refresh=true">refresh data</a><br>
+        <a href="index.php?clear=true">clear data(!!!NOT REVERSABLE!!!)</a><br>
         <br>
         <a href="http://localhost/phpmyadmin/">Database UI</a><br>
     </body>
