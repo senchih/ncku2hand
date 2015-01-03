@@ -52,7 +52,7 @@ and open the template in the editor.
                         $fbHandler, 
                         $_ncku2hand['groupId']
                         );
-                $manager->refresh(2);
+                $manager->refresh(10);
             }
             if(isset($_GET['clear'])) {
                 $dbHandler->clearItem();
