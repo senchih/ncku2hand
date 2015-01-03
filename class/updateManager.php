@@ -33,7 +33,7 @@ class updateManager {
                 // Loop: Iterates each item in a page
                 $itemId = $postObject->getProperty('id');
                 $itemUpdateTime = strtotime($postObject->getProperty('updated_time'));
-                if($this->dbHandler->chechAndSetItemFresh($itemId, $itemUpdateTime)) {
+                if($this->dbHandler->checkAndSetItemFresh($itemId, $itemUpdateTime)) {
                     // Case: Meets item that latest data already in db, 
                     // which means all updated items are loded
                     echo 'Old data reached in page ' . $page . '<br>';
@@ -50,7 +50,7 @@ class updateManager {
         }
     }
     
-    function loadIdList($pageLimit) {
+    protected function loadIdList($pageLimit) {
         if($this->fbHandler->loggedIn()) {
             $fbSyntax = '/' . $this->groupId . '/feed' . 
                         '?fields=' . 
@@ -73,51 +73,31 @@ class updateManager {
         }
     }
     
-    function refreshItem($itemId) {
-        $fbSyntax = '/' . $itemId . 
-                '?fields=' . 
-                'id,' . 
-                'from,' . 
-                'message,' . 
-                'type,' . 
-                'created_time,' . 
-                'updated_time,' . 
-                'attachments';
-        $this->fbHandler->setRequest($fbSyntax);
-        $post = $this->fbHandler->executeAndGetGraphObject();
-
-        $userId = $post->getProperty('from')->getProperty('id');
-        $context = $post->getProperty('message');
-        $createdTime = strtotime($post->getProperty('created_time'));
-        $updatedTime = strtotime($post->getProperty('updated_time'));
-        $this->dbHandler->updateItemInfo($itemId, $updatedTime, $createdTime, $context, $userId);
-
-        //Store photos
-        if($post->getProperty('type') == 'photo') {
-            $attachment = $post->getProperty('attachments')->getProperty(0);
-            $subAttachment = $attachment->getProperty('subattachments');
-            if($subAttachment) {
-                // Multi-photo case
-                $photoIndex = 0;
-                while($photo = $subAttachment->getProperty($photoIndex)) {
-                    $imageId = $photo->getProperty('target')->getProperty('id');
-                    $width = $photo->getProperty('media')->getProperty('image')->getProperty('width');
-                    $height = $photo->getProperty('media')->getProperty('image')->getProperty('height');
-                    $imageUri = $photo->getProperty('media')->getProperty('image')->getProperty('src');
-                    $this->dbHandler->updateItemPhoto($itemId, $imageId, $width, $height, $imageUri);
-                    $photoIndex++;
-                }
-            } else {
-                // Single photo case
-                    $imageId = $attachment->getProperty('target')->getProperty('id');
-                    $width = $attachment->getProperty('media')->getProperty('image')->getProperty('width');
-                    $height = $attachment->getProperty('media')->getProperty('image')->getProperty('height');
-                    $imageUri = $attachment->getProperty('media')->getProperty('image')->getProperty('src');
-                    $this->dbHandler->updateItemPhoto($itemId, $imageId, $width, $height, $imageUri);
+    private function refreshSinglePhoto($itemId, $photoGraphObject) {
+        $imageId = $photoGraphObject->getProperty('target')->getProperty('id');
+        $width = $photoGraphObject->getProperty('media')->getProperty('image')->getProperty('width');
+        $height = $photoGraphObject->getProperty('media')->getProperty('image')->getProperty('height');
+        $imageUri = $photoGraphObject->getProperty('media')->getProperty('image')->getProperty('src');
+        $this->dbHandler->updateItemPhoto($itemId, $imageId, $width, $height, $imageUri);
+    }
+    
+    private function refreshAlbum($itemId, $albumGraphObject) {
+        $singlePhotoSet = $albumGraphObject->getProperty('subattachments');
+        if($singlePhotoSet) {
+            // Case: Many photos in an item
+            $photoIndex = 0;
+            $photo = $singlePhotoSet->getProperty($photoIndex);
+            while($photo) {
+                $this->refreshSinglePhoto($itemId, $photo);
+                $photo = $singlePhotoSet->getProperty($photoIndex++);
             }
+        } else {
+            // Case: One photo in an item
+            $this->refreshSinglePhoto($itemId, $albumGraphObject);
         }
-
-        //Store comments
+    }
+    
+    private function refreshComments($itemId) {
         $fbSyntax = '/' . $itemId . '/comments?limit=25';
         $commentIndex = 0;
         do {
@@ -136,5 +116,35 @@ class updateManager {
                 $commentIndexEachPage++;
             }
         } while($fbSyntax = strstr($response->getProperty('paging')->getProperty('next'), '/' . $this->groupId));
+    }
+    
+    protected function refreshItem($itemId) {
+        $fbSyntax = '/' . $itemId . '?fields=' . 
+                'id, from, message, type, created_time, updated_time, attachments';
+        $this->fbHandler->setRequest($fbSyntax);
+        $post = $this->fbHandler->executeAndGetGraphObject();
+
+        $userId = $post->getProperty('from')->getProperty('id');
+        $context = $post->getProperty('message');
+        $createdTime = strtotime($post->getProperty('created_time'));
+        $updatedTime = strtotime($post->getProperty('updated_time'));
+        $this->dbHandler->updateItemInfo($itemId, $updatedTime, $createdTime, $context, $userId);
+
+        //Store photos
+        if($post->getProperty('type') == 'photo') {
+            $attachment = $post->getProperty('attachments')->getProperty(0);
+            $this->refreshAlbum($itemId, $attachment);
+        }
+
+        //Store comments
+        $this->refreshComments($itemId);
+    }
+    
+    function refresh($pageLimit) {
+        $this->loadIdList($pageLimit);
+        $unfreshList = $this->dbHandler->queryUnfreshList();
+        while($unfreshItemId = $unfreshList->fetch_assoc()) {
+            $this->refreshItem($unfreshItemId['item_id']);
+        }
     }
 }

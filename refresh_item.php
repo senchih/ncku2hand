@@ -33,13 +33,8 @@
                 );
 
         // main procedure
-        $manager->loadIdList(2);
-        $result = $dbHandler->queryUnfreshList();
-        while($unfreshItemId = $result->fetch_assoc()) {
-            $manager->refreshItem($unfreshItemId['item_id']);
-        }
-        
-        echo '<a>end of the php</a><br></p>';
+        $manager->refresh(2);
+        echo '<a>end of the php</a><br>';
         ?>
     </body>
 </html>

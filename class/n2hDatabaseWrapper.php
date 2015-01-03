@@ -12,7 +12,7 @@
  * @author User
  */
 class n2hDatabaseWrapper {
-    protected $mysqli;
+    private $mysqli;
     public $healthy;
     
     function __construct($server, $user, $password, $db) {
@@ -20,8 +20,8 @@ class n2hDatabaseWrapper {
         
         // Construst mysqli wrapper
         $this->mysqli = new mysqli( $server,        // server
-                                    $user,          // user
-                                    $password);     // passwd
+                                $user,          // user
+                                $password);     // passwd
                 
         //Check error
         if ($this->mysqli->connect_errno) {
@@ -111,18 +111,18 @@ class n2hDatabaseWrapper {
         return $this->mysqli->query('SELECT item_id FROM items WHERE item_fresh=0');
     }
     
-    function chechAndSetItemFresh($itemId, $updateTime) {
-        $oldItemUpdateTime = $this->mysqli
-                ->query("SELECT item_updated_time FROM items WHERE item_id='".$itemId.'\'')
-                ->fetch_assoc()['item_updated_time'];
+    function checkAndSetItemFresh($itemId, $updateTime) {
+        $stmt = $this->mysqli->prepare("SELECT item_updated_time FROM items WHERE item_id=?");
+        $stmt->bind_param('s', $itemId);
+        $stmt->execute();
+        $oldItemUpdateTime = $stmt->get_result()->fetch_array()['item_updated_time'];
         
         if($oldItemUpdateTime) {
             // Case: Old item
             if($updateTime>$oldItemUpdateTime) {
                 // Case: The old item was found updated
                 // update its date and unset item_fresh flag
-                $stmt = $this->mysqli
-                        ->prepare("UPDATE items SET item_updated_time=?,item_fresh=0 WHERE item_id=?");
+                $stmt = $this->mysqli->prepare("UPDATE items SET item_updated_time=?,item_fresh=0 WHERE item_id=?");
                 $stmt->bind_param("is", $updateTime, $itemId);
                 $stmt->execute();
                 return false;
@@ -131,8 +131,7 @@ class n2hDatabaseWrapper {
             }
         } else {
             // Case: New item (try creating new row)
-            $stmt = $this->mysqli
-                    ->prepare("INSERT INTO items(item_id, item_updated_time, item_fresh) VALUES (?, ?, 0)");
+            $stmt = $this->mysqli->prepare("INSERT INTO items(item_id, item_updated_time, item_fresh) VALUES (?, ?, 0)");
             $stmt->bind_param("si", $itemId, $updateTime);
             $stmt->execute();
             return false;

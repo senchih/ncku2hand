@@ -15,21 +15,20 @@ and open the template in the editor.
         require_once('..\\..\\inc\\config.php');
         require_once('class\\n2hDatabaseWrapper.php');
         require_once('class\\n2hFacebookConnector.php');
-
-        // FB SDK init
+        
         $fbHandler = new n2hFacebookConnector(
                 $_ncku2hand['fbAppId'],
                 $_ncku2hand['fbAppSecret'],
                 $_ncku2hand['fbRedirectUri']
                 );
-
-        // main procedure
+        
         $dbHandler = new n2hDatabaseWrapper(
                 $_ncku2hand['dbServerName'], 
                 $_ncku2hand['dbUserName'], 
                 $_ncku2hand['dbPassword'], 
                 $_ncku2hand['dbName']
                 );
+        
         if($fbHandler->loggedIn()) {
             // Case: in logging-in flow
             // get a long-lived token then update to db
