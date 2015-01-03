@@ -5,9 +5,10 @@ ncku2hand core engine
 
 
 - refresh_item.php改物件
-(用HNDL建構
-- 1/3
 - DEBUG
+- 1/3
+
+
 - 改用狀態變數才能大資料
 - LOG REFRESH, TOKEN_USAGE
 - SELECT改stmt

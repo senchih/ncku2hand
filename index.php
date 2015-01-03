@@ -13,8 +13,8 @@ and open the template in the editor.
         <?php
         session_start();
         require_once('..\\..\\inc\\config.php');
-        require_once('n2hDatabaseWrapper.php');
-        require_once('n2hFacebookConnector.php');
+        require_once('class\\n2hDatabaseWrapper.php');
+        require_once('class\\n2hFacebookConnector.php');
 
         // FB SDK init
         $fbHandler = new n2hFacebookConnector(
@@ -51,6 +51,7 @@ and open the template in the editor.
         }
 
         echo '<a href="refresh_item.php">refresh data</a></br>';
+        echo '<a href="clear_item.php">clear data(BE AWARE!!!)</a></br>';
         echo '<a href="http://localhost/phpmyadmin/">Database UI</a></br>';
         echo '<a>end of the php</a></br></p>';
         ?>

@@ -78,7 +78,7 @@ class n2hDatabaseWrapper {
                 "VALUES (?, ?, ?, ?, ?)".
                     "ON DUPLICATE KEY ".
                         "UPDATE comment_message=?");
-        $stmt->bind_param("sssis", $commentId, $commentMessage, $commentUserId, $commentIndex, $itemId, $commentMessage);
+        $stmt->bind_param("sssiss", $commentId, $commentMessage, $commentUserId, $commentIndex, $itemId, $commentMessage);
         return $stmt->execute();
     }
     
@@ -107,7 +107,11 @@ class n2hDatabaseWrapper {
         }
     }
     
-    function chechItemFresh($itemId, $updateTime) {
+    function getUnfreshList() {
+        return $this->mysqli->query('SELECT item_id FROM items WHERE item_fresh=0');
+    }
+    
+    function chechAndSetItemFresh($itemId, $updateTime) {
         $oldItemUpdateTime = $this->mysqli
                 ->query("SELECT item_updated_time FROM items WHERE item_id='".$itemId.'\'')
                 ->fetch_assoc()['item_updated_time'];
@@ -133,5 +137,11 @@ class n2hDatabaseWrapper {
             $stmt->execute();
             return false;
         }
+    }
+    
+    function clearItem() {
+        $this->mysqli->query("TRUNCATE comments");
+        $this->mysqli->query("TRUNCATE images");
+        $this->mysqli->query("TRUNCATE items");
     }
 }

@@ -43,13 +43,13 @@ class n2hFacebookConnector {
     function setToken($token) {
         $this->session = new FacebookSession($token);
         try {
-          $this->session->validate();
+            $this->session->validate();
         } catch (FacebookRequestException $e) {
-          // Session not valid, Graph API returned an exception with the reason.
-          echo $e->getMessage();
+            // Session not valid, Graph API returned an exception with the reason.
+            echo $e->getMessage();
         } catch (Exception $e) {
-          // Graph API returned info, but it may mismatch the current app or have expired.
-          echo $e->getMessage();
+            // Graph API returned info, but it may mismatch the current app or have expired.
+            echo $e->getMessage();
         }
     }
     
@@ -67,7 +67,15 @@ class n2hFacebookConnector {
     }
     
     function executeAndGetGraphObject() {
-        $fbResponse = $this->request->execute();
-        return $fbResponse->getGraphObject();
+        try {
+            $fbResponse = $this->request->execute();
+            return $fbResponse->getGraphObject();
+        } catch (FacebookRequestException $e) {
+            // Session not valid, Graph API returned an exception with the reason.
+            echo $e->getMessage();
+        } catch (Exception $e) {
+            // Graph API returned info, but it may mismatch the current app or have expired.
+            echo $e->getMessage();
+        }
     }
 }
