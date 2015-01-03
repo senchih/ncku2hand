@@ -36,11 +36,11 @@ class n2hDatabaseWrapper {
         $result = $this->mysqli->query('SELECT * FROM system_status');
         if($result) {
             if($result->num_rows != 1) {
-                echo 'Warning: Status not atomic!</br>';
+                echo 'Warning: Status not atomic!<br>';
                 $this->healthy = false;
             }
         } else {
-                echo 'Failed to check status table.' . '</br>';
+                echo 'Failed to check status table.' . '<br>';
                 $this->healthy = false;
         }
     }
@@ -102,12 +102,12 @@ class n2hDatabaseWrapper {
             $row = $result->fetch_assoc();
             return $row['access_token'];
         } else {
-            echo "Failed to fetch access_token." . '</br>';
+            echo "Failed to fetch access_token." . '<br>';
             return false;
         }
     }
     
-    function getUnfreshList() {
+    function queryUnfreshList() {
         return $this->mysqli->query('SELECT item_id FROM items WHERE item_fresh=0');
     }
     

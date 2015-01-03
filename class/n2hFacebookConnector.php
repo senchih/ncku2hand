@@ -30,7 +30,7 @@ class n2hFacebookConnector {
         } catch( FacebookRequestException $e ) {
             // When Facebook returns an error
             echo 'Exception occured, code: ' . $e->getCode();
-            echo ' with message: ' . $e->getMessage() . '</br>';
+            echo ' with message: ' . $e->getMessage() . '<br>';
         } catch( Exception $e ) {
             // When validation fails or other local issues
         }

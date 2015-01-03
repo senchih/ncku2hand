@@ -36,12 +36,12 @@ class updateManager {
                 if($this->dbHandler->chechAndSetItemFresh($itemId, $itemUpdateTime)) {
                     // Case: Meets item that latest data already in db, 
                     // which means all updated items are loded
-                    echo 'Old data reached in page ' . $page . '</br>';
+                    echo 'Old data reached in page ' . $page . '<br>';
                     return false;
                 }
                 $indexInPage++;
             }
-            echo 'Page ' . $page . ' was loaded.</br>';
+            echo 'Page ' . $page . ' was loaded.<br>';
             return strstr($feedObject->getProperty('paging')->getProperty('next'), '/' . $this->groupId);
         } else {
             // Case: GraphAPI returns empty page
@@ -56,19 +56,19 @@ class updateManager {
                         'id,' . 
                         'updated_time' . 
                         '&limit=25';
-            echo 'Fetching start time: ' . time() . '</br>';
+            echo 'Fetching start time: ' . time() . '<br>';
             $page = 1;
             while($fbSyntax) {
                 $fbSyntax = $this->loadIdListPerPage($fbSyntax, $page);
                 if($page == $pageLimit) {
-                    echo 'Page limit ' . $pageLimit . ' reached.</br>';
+                    echo 'Page limit ' . $pageLimit . ' reached.<br>';
                     break;
                 }
                 $page++;
             }
-            echo 'Fetching end time: ' . time() . '</br>';
+            echo 'Fetching end time: ' . time() . '<br>';
         } else {
-            echo 'Token invalid or something...</br>';
+            echo 'Token invalid or something...<br>';
         }
     }
     

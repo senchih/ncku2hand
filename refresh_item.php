@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Refresh items (v150102)</title>
+        <title>Refresh items (v150103)</title>
     </head>
     <body>
         <?php
@@ -34,12 +34,12 @@
 
         // main procedure
         $manager->loadIdList(2);
-        $result = $dbHandler->getUnfreshList();
+        $result = $dbHandler->queryUnfreshList();
         while($unfreshItemId = $result->fetch_assoc()) {
             $manager->refreshItem($unfreshItemId['item_id']);
         }
         
-        echo '<a>end of the php</a></br></p>';
+        echo '<a>end of the php</a><br></p>';
         ?>
     </body>
 </html>

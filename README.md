@@ -3,8 +3,6 @@ ncku2hand
 
 ncku2hand core engine
 
-
-- refresh_item.php改物件
 - DEBUG
 - 1/3
 
