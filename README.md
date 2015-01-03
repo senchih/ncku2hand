@@ -4,7 +4,8 @@ ncku2hand
 ncku2hand core engine
 
 
-- refresh_item.php改物件(用HNDL建構
+- refresh_item.php改物件
+(用HNDL建構
 - 1/3
 - DEBUG
 - 改用狀態變數才能大資料
