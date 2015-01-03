@@ -45,6 +45,7 @@ class updateManager {
             return strstr($feedObject->getProperty('paging')->getProperty('next'), '/' . $this->groupId);
         } else {
             // Case: GraphAPI returns empty page
+            echo 'Page ' . $page . ' is empty.<br>';
             return false;
         }
     }
@@ -94,7 +95,8 @@ class updateManager {
         //Store photos
         if($post->getProperty('type') == 'photo') {
             $attachment = $post->getProperty('attachments')->getProperty(0);
-            if($subAttachment = $attachment->getProperty('subattachments')) {
+            $subAttachment = $attachment->getProperty('subattachments');
+            if($subAttachment) {
                 // Multi-photo case
                 $photoIndex = 0;
                 while($photo = $subAttachment->getProperty($photoIndex)) {
