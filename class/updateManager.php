@@ -50,26 +50,28 @@ class updateManager {
         }
     }
     
-    protected function loadIdList($pageLimit) {
+    function fetchIdList() {
         if($this->fbHandler->loggedIn()) {
-            $fbSyntax = '/' . $this->groupId . '/feed' . 
-                        '?fields=' . 
-                        'id,' . 
-                        'updated_time' . 
-                        '&limit=25';
-            echo 'Fetching start time: ' . time() . '<br>';
-            $page = 1;
-            while($fbSyntax) {
-                $fbSyntax = $this->loadIdListPerPage($fbSyntax, $page);
-                if($page == $pageLimit) {
-                    echo 'Page limit ' . $pageLimit . ' reached.<br>';
-                    break;
-                }
-                $page++;
+            // determine the syntax should be used
+            if(!isset($_SESSION['syntaxForFetchingId'])) {
+                $fbSyntax = '/'.$this->groupId.'/feed?fields=id,updated_time&limit=25';
+                $_SESSION['indexForFetchingId'] = 1;
+            } else {
+                $fbSyntax = $_SESSION['syntaxForFetchingId'];
+                $_SESSION['indexForFetchingId']++;
             }
-            echo 'Fetching end time: ' . time() . '<br>';
+            // use and get next syntax
+            $fbSyntax = $this->loadIdListPerPage($fbSyntax, $_SESSION['indexForFetchingId']);
+            
+            if($fbSyntax) {
+                $_SESSION['syntaxForFetchingId'] = $fbSyntax;
+                return true;
+            } else {
+                return false;
+            }
         } else {
-            echo 'Token invalid or something...<br>';
+            echo 'Facebook not logged in...<br>';
+            return false;
         }
     }
     
@@ -118,7 +120,7 @@ class updateManager {
         } while($fbSyntax = strstr($response->getProperty('paging')->getProperty('next'), '/' . $this->groupId));
     }
     
-    protected function refreshItem($itemId) {
+    function refreshItem($itemId) {
         $fbSyntax = '/' . $itemId . '?fields=' . 
                 'id, from, message, type, created_time, updated_time, attachments';
         $this->fbHandler->setRequest($fbSyntax);
@@ -138,13 +140,5 @@ class updateManager {
 
         //Store comments
         $this->refreshComments($itemId);
-    }
-    
-    function refresh($pageLimit) {
-        $this->loadIdList($pageLimit);
-        $unfreshList = $this->dbHandler->queryUnfreshList();
-        while($unfreshItemId = $unfreshList->fetch_assoc()) {
-            $this->refreshItem($unfreshItemId['item_id']);
-        }
     }
 }

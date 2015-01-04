@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Main Manager v150103</title>
+        <title>Main Manager v150104</title>
     </head>
     <body>
         <?php
@@ -52,16 +52,16 @@ and open the template in the editor.
             $token = $dbHandler->getToken();
             if(filter_input(INPUT_GET, 'clear')) {
                 $dbHandler->clearItem();
+                
+                $imgPath = '../storage/img/';
+                $handle = opendir($imgPath);
+                while (false !== ($entry = readdir($handle))) {
+                    if($entry=='.' || $entry=='..') {
+                        continue;
+                    }
+                    unlink($imgPath . $entry);
+                }
                 echo 'Items in database are reseted.<br>';
-            }
-            if(filter_input(INPUT_GET, 'refresh')) {
-                $fbHandler->setToken($token);
-                $manager = new updateManager(
-                        $dbHandler, 
-                        $fbHandler, 
-                        $_ncku2hand['groupId']
-                        );
-                $manager->refresh(10);
             }
             echo "<br>Token in the server: " .$token. '<br>';
             echo '<a href="https://developers.facebook.com/tools/debug/accesstoken?q='.
@@ -70,9 +70,11 @@ and open the template in the editor.
             // show login url
             echo '<a href="' . $fbHandler->getLoginUrl() . '">request token from FACEBOOK</a><br>';
         }
+        
         ?>
         
-        <a href="index.php?refresh=true">refresh data</a><br>
+        <a href="refresh_id.php">refresh item list</a><br>
+        <a href="refresh_item.php">refresh item data</a><br>
         <a href="index.php?clear=true">clear data(!!!NOT REVERSABLE!!!)</a><br>
         <br>
         <a href="http://localhost/phpmyadmin/">Database UI</a><br>

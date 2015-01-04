@@ -107,8 +107,18 @@ class n2hDatabaseWrapper {
         }
     }
     
-    function queryUnfreshList() {
-        return $this->mysqli->query('SELECT item_id FROM items WHERE item_fresh=0');
+    function fetchUnfreshId() {
+        $result = $this->mysqli->query(
+                'SELECT item_id '
+                . 'FROM items '
+                . 'WHERE item_fresh=0 '
+                . 'LIMIT 1'
+                )->fetch_assoc();
+        if($result) {
+            return $result['item_id'];
+        } else {
+            return false;
+        }
     }
     
     function checkAndSetItemFresh($itemId, $updateTime) {
