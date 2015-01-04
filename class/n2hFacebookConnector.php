@@ -11,7 +11,7 @@
  *
  * @author User
  */
-require_once('..\\..\\inc\\autoload.php');
+require_once('..\\inc\\autoload.php');
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
 use Facebook\FacebookRequest;

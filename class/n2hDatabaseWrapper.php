@@ -84,7 +84,7 @@ class n2hDatabaseWrapper {
     
     function updateItemPhoto($itemId, $imageId, $width, $height, $imageUri) {
         $imagePath = 'img/' . $imageId . '.jpg';
-        copy($imageUri, '../../storage/'.$imagePath);
+        copy($imageUri, '../storage/'.$imagePath);
                         
         $stmt = $this->mysqli->prepare(
                 "INSERT INTO images ".
