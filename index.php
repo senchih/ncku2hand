@@ -13,9 +13,13 @@ and open the template in the editor.
         <?php
         // include libs
         require_once('..\\inc\\config.php');
+        echo 'aa<br>';
         require_once('class\\n2hDatabaseWrapper.php');
+        echo 'aaa<br>';
         require_once('class\\n2hFacebookConnector.php');
+        echo 'aaaa<br>';
         require_once('class\\updateManager.php');
+        echo 'aaaaa<br>';
         
         // initialize
         session_start();
