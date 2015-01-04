@@ -112,10 +112,8 @@ class n2hDatabaseWrapper {
     }
     
     function checkAndSetItemFresh($itemId, $updateTime) {
-        $stmt = $this->mysqli->prepare("SELECT item_updated_time FROM items WHERE item_id=?");
-        $stmt->bind_param('s', $itemId);
-        $stmt->execute();
-        $oldItemUpdateTime = $stmt->get_result()->fetch_array()['item_updated_time'];
+        $result = $this->mysqli->query("SELECT item_updated_time FROM items WHERE item_id='".$itemId."'");
+        $oldItemUpdateTime = $result->fetch_assoc()['item_updated_time'];
         
         if($oldItemUpdateTime) {
             // Case: Old item
