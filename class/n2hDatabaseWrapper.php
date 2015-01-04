@@ -19,7 +19,7 @@ class n2hDatabaseWrapper {
         $this->healthy = true;
         
         // Construst mysqli wrapper
-        $this->mysqli = new mysqli( $server,        // server
+        $this->mysqli = new mysqli( $server,    // server
                                 $user,          // user
                                 $password);     // passwd
                 
