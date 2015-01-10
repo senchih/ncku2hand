@@ -1,0 +1,53 @@
+body {
+    font-size: 62.5%;
+    background: none repeat scroll 0% 0% #FFF;
+    padding-top: 48px !important; 
+    background-position: 0px 28px;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, table, th, td {
+    margin: 0px;
+    padding: 0px;
+}
+a {
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: normal;
+}
+p {
+    font-size: 15px;
+    margin-bottom: 1.4em;
+    color: #444;
+}
+#wrapper {
+    margin: 0px auto 24px;
+    width: 960px;
+}
+#header {
+    margin-top: 0px;
+    position: relative;
+    height: 72px;
+    background: url("header-bg.png") repeat-x scroll center top #F1F1F1;
+}
+#header.logged-out {
+    padding: 30px 0px 20px;
+}
+#header div {
+    display: block;
+    overflow: hidden;
+    margin: 0px auto;
+}
+body, input[type="submit"], input[type="text"] {
+    font-family: "Open Sans","Helvetica Neue",sans-serif;
+}
+input[type="submit"] {
+    line-height: 1em;
+}
+th {
+    text-align: left;
+}
+ol, ul {
+    font-size: 15px;
+    line-height: 1.6em;
+}
+
+

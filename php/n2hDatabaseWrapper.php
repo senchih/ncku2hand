@@ -7,12 +7,11 @@
  */
 
 /**
- * Description of n2hDatabaseWrapper
- *
+ * test version!!!!
  * @author User
  */
 class n2hDatabaseWrapper {
-    private $mysqli;
+    public $mysqli;
     public $healthy;
     
     function __construct($server, $user, $password, $db) {

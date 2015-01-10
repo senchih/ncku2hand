@@ -1,0 +1,1031 @@
+/*unclean*/
+.login-submit input[type="submit"],
+.postform input#postformsub {
+	font-family: 'Open Sans', sans-serif;
+}
+#wrapper.pagebody {
+	overflow: visible;
+}
+.pagebody {
+	margin-top: 0 !important;
+}
+table.widefat {
+	border-collapse: collapse;
+	width: 716px;
+	clear: both;
+	margin-bottom: 24px !important;
+	margin-left: 4px;
+	color: #444;
+}
+.col-12 table.widefat {
+	width: 948px;
+	margin-left: 0;
+}
+table.widefat a {
+	text-decoration: none;
+}
+table.widefat tr.alt {
+	background-color: #f9f9f9;
+}
+table.widefat thead {
+	color: #444;
+	background: #eee;
+}
+table.widefat tbody {
+	margin-bottom: 24px;
+}
+table.widefat td, table.widefat th {
+	font-size: 12px;
+	padding: 6px;
+	vertical-align: text-top;
+}
+table.widefat .check-column {
+	text-align: center;
+	vertical-align: text-top;
+	width: 3%;
+}
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+	float: left;
+	margin: 0 12px;
+}
+.col-1 {
+	width: 52px;
+}
+.col-2 {
+	width: 152px;
+	margin: 0 0 0 12px;
+}
+.col-3 {
+	width: 212px;
+}
+.col-4 {
+	width: 292px;
+}
+.col-5 {
+	width: 372px;
+}
+.col-6 {
+	width: 452px;
+}
+.col-7 {
+	width: 532px;
+}
+.col-8 {
+	width: 612px;
+}
+.col-9 {
+	width: 692px;
+}
+.col-10 {
+	width: 772px;
+}
+.col-11 {
+	width: 852px;
+}
+.col-12 {
+	width: 932px;
+}
+p.bbcrumb {
+	font-size: 13px;
+	margin-top: 0 !important;
+	padding-top: 0 !important;
+}
+p.bbcrumb a {
+	border: none;
+}
+.forums-intro {
+	width: 100%;
+	clear: left;
+	float: left;
+	margin-left: 10px !important;
+	margin-top: -4px !important;
+}
+#header {
+	margin-top: 0;
+}
+#header.logged-out {
+	padding: 30px 0 20px;
+}
+#header .logged-in p {
+	float: right;
+}
+.forums-intro h2 {
+	font-size: 18px;
+	line-height: 1em;
+	margin-bottom: 6px;
+	margin-left: 0 !important;
+	margin-top: 0 !important;
+}
+.forums-intro p {
+	font-size: 15px;
+	line-height: 1.6em;
+	color: #666;
+	margin-bottom: 0;
+}
+#notes {
+	float: none;
+	width: 950px;
+	background: #f7f7ff;
+	clear: both;
+	text-align: center;
+	float: left;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	margin-bottom: 20px !important;
+	padding: 14px 0 13px;
+	line-height: 1em;
+	margin-top: 20px;
+	margin-left: 10px;
+}
+#notes p {
+	display: inline-block;
+	margin: 0;
+	font-size: 16px;
+}
+#front-search {
+	display: inline-block;
+}
+#front-search input {
+	font-size: 16px;
+	color: #444;
+	background: #fff;
+	border: 1px solid #cfcfcf;
+	padding: 2px 4px;
+	margin: 0 0 0 2px;
+}
+#front-search input.inputButton {
+	font-size: 14px !important;
+	height: 24px !important;
+	padding: 3px 12px !important;
+	vertical-align: top;
+	-moz-border-radius: 1em !important;
+	-webkit-border-radius: 1em !important;
+	border-radius: 1em !important;
+}
+.forums-login {
+	width: 302px !important;
+	float: right;
+	margin-top: -50px !important;
+}
+.forums-login.logged-in {
+	margin-top: 24px !important;
+	width: 400px !important;
+}
+#login p {
+	font-size: 13px;
+	display: block;
+	text-align: left;
+	margin-left: 0;
+	line-height: 1.4em;
+	margin-bottom: 15px;
+	color: #666;
+}
+#login label {
+	display: block;
+	font-size: 11px;
+	color: #666;
+}
+.login-fields input[type=text],
+.login-fields input[type=password] {
+	border: 1px solid #cfcfcf;
+	padding: 4px;
+	margin-right: 4px;
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.05);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.05);
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.05);
+	background: #fff;
+	font-size: 12px;
+	margin-top: 1px;
+	width: 95px;
+}
+.login-user,
+.login-pass {
+	float: left;
+	width: auto !important;
+}
+.login-submit {
+	padding-top: 13px !important;
+	float: left;
+	width: auto !important;
+}
+.login-submit input[type="submit"] {
+	border: 1px solid #ccc;
+	border-radius: 12px;
+	background: #F2F2F2 url("http: //s.wordpress.com/i/buttonbg.png") top left repeat-x;
+	text-shadow: 0 1px 0 #fff;
+	color: #333;
+	font-size: 12px;
+	font-weight: bold !important;
+	padding: 0px 10px 0 !important;
+	height: 24px !important;
+	text-decoration: none !important;
+	-webkit-border-radius: 11px !important;
+	-khtml-border-radius: 11px !important;
+	-moz-border-radius: 11px !important;
+	border-radius: 11px !important;
+	margin: 0 !important;
+	outline: none;
+}
+.login-submit input[type="submit"]:hover {
+	border-color: #555;
+}
+.login-fields {
+	clear: both;
+	width: 100;
+	float: left;
+}
+#login label input {
+	display: block;
+}
+.frontpageheatmap a {
+	font-weight: normal;
+	line-height: 28px;
+	padding-bottom: 10px
+}
+.alt {
+	background: #fff
+}
+.deleted {
+	background: #ff9999
+}
+.bozo {
+	background: pink;
+}
+li.deleted {
+	background: #ffebe8;
+	padding: 20px 0;
+	margin: -21px 0 0;
+	border-top: 1px solid #c00;
+	border-bottom: 1px solid #c00 !important;
+}
+a.new-topic:visited {
+	color: #21759b !important;
+}
+.button .new-topic {
+	background: transparent;
+	margin: 0;
+	padding: 0;
+}
+.topicnav {
+	font-size: 10px;
+}
+.topicnav .col-4 {
+	float: right;
+	margin-right: 0;
+}
+p.pages {
+	float: right;
+	margin-top: -4px;
+}
+#forumlist {
+	font-size: 12px;
+	border-collapse: collapse;
+	margin-top: 5px;
+	margin-bottom: 24px;
+	margin-left: 11px;
+	width: 214px;
+}
+#forumlist .num {
+	font-size: 12px;
+	padding-top: 10px;
+}
+#forumlist a {
+	font-size: 15px;
+	line-height: 1.4em;
+	font-weight: bold;
+}
+#forumlist a:visited {
+	font-weight: bold !important;
+}
+#forumlist tbody tr.head th,
+table.widefat th {
+	font-size: 10px;
+	font-weight: 500;
+	padding-bottom: 7px;
+}
+#forumlist tbody tr.head th {
+	white-space: nowrap;
+	padding-right: 8px;
+}
+#forumlist tbody tr.head th:last-child {
+	padding-right: 0;
+}
+#forumlist tbody tr {
+	border-bottom: 1px solid #dadada !important;
+	vertical-align: top;
+}
+#forumlist td {
+	line-height: 1.4em;
+	padding: 8px 8px 8px 0;
+}
+#forumlist small {
+	font-size: 13px;
+	color: #888;
+}
+ul#views {
+	margin: 2px 0 0;
+	font-size: 12px;
+}
+#views li {
+	list-style: none;
+	display: inline;
+}
+.topictitle h2, #tos_violation h2 {
+	font-size: 30px;
+	line-height: 1.2em;
+	color: #444;
+	margin-bottom: 11px;
+	margin-left: 0;
+}
+h2.post-form {
+	font-size: 18px;
+	color: #444;
+	clear: both;
+}
+h2.post-form + p {
+	margin-left: 0;
+}
+h2.post-form a {
+	border: none;
+}
+.topictitle .col-9 {
+	margin-left: 255px;
+}
+#thread {
+	list-style: none;
+	margin: 20px 0 0 -12px !important;
+	padding: 0;
+}
+#thread li {
+	float: left;
+	border-bottom: 1px solid #dadada;
+	margin-bottom: 20px;
+}
+#thread li li {
+	list-style: disc;
+	float: none;
+	margin-left: 6px;
+	border: none;
+	margin-bottom: 0;
+}
+#thread li ol li {
+	list-style: decimal;
+}
+.topicmeta {
+	padding-top: 10px;
+}
+h4 {
+	font-weight: bold;
+	padding-top: 1px;
+	font-size: 12px;
+	border-bottom: 1px solid #dedede;
+	padding-bottom: 4px;
+	color: #444;
+	margin-bottom: 10px;
+	margin-left: 0;
+	margin-right: 0 !important;
+}
+.topicmeta ul {
+	margin: 0 0 22px 0 !important;
+	font-size: 11px;
+}
+.topicmeta ul li {
+	list-style: none;
+	padding: 0 0 8px;
+	line-height: 1.5em;
+	word-wrap: break-word;
+}
+.topicmeta .tags ul, .topicmeta .tags p {
+	margin-bottom: 0 !important;
+}
+.topicmeta .tags p {
+	margin: 0;
+	font-size: 11px;
+}
+input#tag {
+	padding-left: 0;
+	padding-right: 0;
+	width: 80px;
+}
+#front-page .postform {
+	margin: 0 auto;
+	max-width: 550px;
+}
+#topic-page .postform {
+	float: right;
+}
+.postform #post_content {
+	max-width: 550px;
+}
+.postform label {
+	display: block;
+}
+.postform textarea {
+	height: 12em;
+	width: 100%;
+}
+.postform input[type="text"], .postform textarea {
+	font-size: 16px;
+	color: #444;
+	display: block;
+	background: #fff;
+	border: 1px solid #cfcfcf;
+	padding: 2px 4px;
+	margin: 0 0 0 2px;
+}
+.postform input#topic,
+.postform input#tags {
+	margin: 0 0 15px 0;
+	width: 100%;
+	max-width: 550px;
+}
+.postform select {
+	display: block;
+	margin-bottom: 20px;
+}
+.postform #bbcode_buttons {
+	height: 20px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+.postform p {
+	margin: 0 20px 6px 0 !important;
+	font-size: 12px;
+}
+#topic-page p#post-form-subscription-container, #topic-page p#submit-wrap {
+	max-width: none;
+}
+.postform input#postformsub {
+	border-radius: 20px 20px 20px 20px !important;
+	cursor: pointer;
+	height: auto !important;
+	padding: 8px 16px !important;
+	float: left;
+	background: #F2F2F2 url(http://en.support.wordpress.com/i/buttonbg.png) repeat-x scroll left top;
+	border: 1px solid #CCC;
+	color: #333;
+	font-weight: bold;
+	font-size: 12px;
+	outline: medium none;
+	text-shadow: 0 1px 0 white;
+	margin-right: 8px;
+	margin-top: 5px;
+}
+.postform #allowed-markup {
+	width: 200px;
+	color: #666;
+}
+#topic-page .postform #allowed-markup {
+	float: left;
+	position: relative;
+	top: -200px;
+}
+#front-page .postform #allowed-markup {
+	float: right;
+	margin-right: -200px !important;
+	margin-top: -200px !important;
+}
+#topic-page .postform #bbcode_buttons, #topic-page .postform #post_content, #topic-page .postform .atd_container {
+	margin-left: 200px;
+	width: 550px;
+}
+#forum-page .postform {
+	width: 720px;
+}
+.postform code {
+	background: #f1f1f1;
+	font-family: Monaco,Consolas,Courier,monospace;
+}
+.poststuff {
+	font-size: 10px;
+	text-transform: uppercase
+}
+#thread .threadauthor {
+	margin: 0;
+	padding-top: 2px;
+	word-wrap: break-word;
+}
+#thread .col-3 {
+	margin: 5px 0 -5px 0 !important
+}
+.threadauthor p {
+	margin-bottom: 20px;
+}
+.keymaster .threadauthor p,
+.premium-author .threadauthor p {
+	background: #eee;
+	margin: -4px 0 20px 7px!important;
+	padding: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	text-shadow: 0 1px 0 #fff;
+	border: 1px solid #ddd;
+	border-top-color: #eee;
+	border-left-color: #eee;
+}
+.keymaster .authortitle a,
+.premium-author .authortitle a {
+	font-weight: bold !important;
+	color: #f1831e;
+}
+.threadauthor a {
+	border: none;
+}
+.threadauthor p {
+	line-height: 1.4em;
+	font-size: 12px;
+	margin: 0 0 20px 11px !important;
+}
+.threadauthor p strong a {
+	font-weight: bold;
+}
+.threadauthor strong {
+	font-size: 13px;
+	color: #444;
+}
+.threadauthor small {
+	font-size: 11px
+}
+.threadauthor .avatar {
+	float: left;
+	margin-right: 12px;
+	padding: 0;
+	border: none;
+}
+tr.sticky td {
+	background: #fffbcc;
+	border-bottom: 1px solid #fff;
+}
+#hottags {
+	margin: 0 0 24px 12px;
+	padding: 0;
+	clear: both;
+}
+#hottags a {
+	margin-right: 10px;
+}
+.post {
+	margin-left: 14px;
+	overflow: auto;
+	font-size: 13px;
+	margin-bottom: 14px;
+}
+.post strong {
+	font-weight: bold;
+}
+.post em {
+	font-style: italic;
+}
+#thread .post p,#thread .post blockquote,#thread .post ul,#thread .post ol {
+	font-size: 13px;
+}
+#thread .post p, #thread .post pre, #thread .post blockquote {
+	margin-bottom: 11px;
+}
+#thread .post blockquote {
+	background: #f5f5f5;
+	border: 1px solid #dadada;
+	padding-left: 22px;
+	padding-right: 22px;
+}
+.clear {
+	display: block;
+	height: 1px;
+	clear: both;
+}
+.page-numbers {
+	font-size: 11px;
+	padding: 2px 4px;
+	margin-right: 3px;
+	border-width: 1px;
+	border-style: solid;
+	background-color: #fff;
+	border-color: #ccc;
+}
+.dots {
+	background-color: transparent;
+	border: none;
+}
+.page-numbers.current {
+	display: inline;
+	font-weight: bold;
+	border-width: 1px;
+	border-style: solid;
+	background-color: #328ab2;
+	border-color: #328ab2;
+	color: #fff;
+}
+a.page-numbers:hover {
+	border-color: #999;
+}
+.next, .prev {
+	padding: 0;
+	border: none;
+	background-color: #fff;
+	color: #21759b;
+}
+.next:hover, .prev:hover {
+	color: #f1831e;
+}
+#userlogin {
+	margin-left: 0;
+}
+dl#userinfo {
+	float: left;
+	margin-left: 12px;
+	margin-bottom: 24px;
+	margin-top: 0;
+	width: 82%;
+	color: #444;
+}
+dl#userinfo dt {
+	float: left;
+	font-size: 10px;
+	color: #888;
+	margin-right: 6px;
+	margin-left: -12px;
+	font-weight: bold;
+}
+#useractivity {
+	clear: both;
+	margin-left: 0;
+}
+#theuser {
+	border: 1px solid #dadada;
+	float: left;
+	width: 99%;
+	margin-bottom: 22px;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+ul#profile-menu {
+	clear: both;
+	float: right;
+	list-style: none;
+	margin: 100px 0 0;
+	z-index: 500;
+	position: relative;
+}
+ul#profile-menu li {
+	display: inline;
+	font-size: 16px;
+	line-height: 16px;
+}
+ul#profile-menu a {
+	border-bottom: none;
+	background: #f9f9f9;
+	border-radius: 1em;
+	padding: 6px 14px;
+	line-height: 16px;
+}
+ul#profile-menu li.current a {
+	color: #444;
+	cursor: default;
+	background: none;
+}
+form#profile-form {
+	clear: both;
+	margin-left: 12px;
+}
+form#profile-form h3 {
+	margin-left: -12px;
+	margin-top: 22px;
+}
+form#profile-form table th {
+	vertical-align: top;
+}
+form#profile-form table input[type=text] {
+	width: 97%;
+}
+form#profile-form .submit input {
+	font-size: 1.2em;
+	height: auto;
+	padding: 4px;
+}
+form#profile-delete-form {
+	float: right;
+	position: relative;
+	top: -42px;
+}
+form#profile-delete-form .delete:hover {
+	background-color: #c00;
+	color: #fff;
+}
+#topic-paging {
+	float: right;
+	margin-right: 0;
+}
+ol.searchresults li {
+	list-style: square;
+}
+ol.searchresults li a {
+	font-size: 12px !important;
+}
+#topic-move {
+	margin-bottom: 24px;
+}
+#viewdiv {
+	margin: 24px 0 18px 11px;
+}
+#viewdiv ul {
+	margin-top: 8px;
+}
+#viewdiv ul li {
+	display: block;
+	line-height: 1.2em;
+}
+#viewdiv h6 {
+	font-size: 13px;
+}
+#viewdiv a {
+	border: none;
+}
+#viewdiv.wpcom-premium-views {
+	background: #fcfce1;
+	clear: both;
+}
+#resolvedformsel {
+	max-width: 150px;
+	background: #fff !important;
+	border: 1px solid #dfdfdf;
+	margin-left: -1px;
+	margin-bottom: 6px;
+}
+#userinfo {
+	width: 948px;
+	margin-left: 12px;
+	padding: 6px 12px;
+	margin-top: 0;
+	font-size: 12px;
+	line-height: 2em;
+}
+#tag-form {
+	margin-top: 8px;
+}
+#tag-form input#tag {
+	font-size: 11px;
+	margin-right: 6px;
+	display: block;
+	float: left;
+	padding: 3px 0;
+}
+#tag-form input[type="submit"] {
+	font-size: 11px;
+	height: 22px;
+	line-height: 21px;
+	padding: 0 10px;
+	-webkit-border-radius: 11px;
+	-moz-border-radius: 11px;
+	border-radius: 11px;
+}
+#profile-page h2 {
+	font-size: 34px;
+	margin-bottom: 0;
+}
+#profile-page .lead-in {
+	font-size: 16px;
+	margin-top: 10px;
+}
+#profile-page ol {
+	list-style: decimal;
+}
+.profileback {
+	margin-top: 20px;
+	position: relative;
+}
+h2.post-form {
+	font-size: 30px;
+	line-height: 1.2em;
+	margin-left: 0;
+}
+.last-poster {
+	max-width: 150px;
+	overflow: hidden;
+}
+.topictitle {
+	font-size: 13px !important;
+}
+.freshness {
+	min-width: 80px;
+}
+.support-notice {
+	margin-left: 0 !important;
+}
+#forum-page .rsslink {
+	border: none;
+	padding-top: 2px;
+	font-size: 13px;
+	background-position: 0 0;
+}
+#forum-page .col-6,#topic-page .col-6 {
+	margin-left: 0;
+}
+#lang-guess {
+	float: none;
+	width: auto;
+}
+.adminbarbloginfo {
+	display: none;
+}
+#search-page h2 {
+	border-bottom: double #DEDEDE;
+	margin: 0 0 10px 0;
+	padding-bottom: 20px;
+}
+#search-page h3 {
+	margin: 20px 0;
+	font-weight: bold;
+}
+#search-page .search-form {
+	float: right;
+}
+#search-page .search-form .text-input {
+	-moz-border-radius: 11px 11px 11px 11px;
+	border: 1px solid #E5E5E5;
+	display: inline-block;
+	font-size: 14px;
+	padding: 10px;
+	width: 200px;
+	margin-right: 10px;
+}
+#search-page .search-form .submit-input {
+	margin-left: 10px;
+}
+#search-page h3.search-for {
+	font-weight: normal;
+	font-size: 28px;
+	padding: 10px 0;
+}
+.post-edit-link {
+	display: inline;
+}
+li .post-undelete-link, li.deleted .post-delete-link {
+	display: none;
+}
+li.deleted .post-undelete-link {
+	display: inline;
+}
+#topic-move, #topic-move fieldset, #topic-move div {
+	display: inline;
+}
+p.subscribed {
+	-moz-border-radius: 8px;
+	-khtml-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	background: #fffbcc;
+	margin: 10px 0 10px 5px;
+	padding: 10px 0;
+	line-height: 0.8em;
+	font-size: 13px;
+	text-align: center;
+}
+#staff-questions-suggestions {
+	clear: both;
+}
+.good-ideas {
+	background: #f6f6f6;
+	border: 1px solid #e4e4e4;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	padding: 20px;
+}
+.good-ideas li {
+	list-style: none;
+	margin: 0;
+}
+div#staff-notes-loaded {
+	-moz-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	padding: 5px;
+	margin: 5px;
+	background: #FFF7D0;
+}
+div#staff-tools-loaded {
+	border: 1px dotted red;
+	padding-left: 5px;
+}
+div#staff-tools h4 {
+	color: red;
+}
+#staff-notes-add-form {
+	display: none;
+}
+p.which_blog_domain {
+	margin-top: 22px;
+}
+#tos_violation {
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-khtml-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	background: #FFEBE8;
+	padding: 8px;
+	border: solid 1px #C00;
+	margin-top: 12px;
+}
+#wpadminbar * .noticon {
+	font: normal 16px/1 'Noticons';
+	height: 16px;
+	width: 16px;
+}
+#wp-toolbar #wp-admin-bar-jumptotop-button-menu {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.admin {
+	font-size: 12px;
+	clear: right;
+}
+p.private-forum-warning {
+	position: fixed;
+	top: 74px;
+	left: 0;
+	width: 100%;
+	padding: 0;
+	margin-left: 0;
+	background: #fffbcc;
+	z-index: 1000;
+	font-size: 18px;
+	text-align: center;
+}
+#header > div {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 960px;
+	min-width: 320px;
+}
+#wrapper {
+	width: 100%;
+	max-width: 960px;
+	min-width: 320px;
+}
+#content:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+#notes {
+	box-sizing: border-box;
+	margin-left: 0;
+	width: 100%;
+}
+.quarter {
+	float: left;
+	width: 25%;
+}
+#forumlist {
+	margin: 10px 0 30px 0;
+	width: 100%;
+}
+#tags {
+	margin: 10px 0 30px 0;
+}
+#tags .head {
+	border-top: 0;
+}
+#viewdiv {
+	margin: 10px 0 30px 0;
+}
+#viewdiv .head {
+	border-bottom: 1px solid #e5e5e5;
+	padding: 7px 0;
+	margin-bottom: 8px;
+}
+.threequarters {
+	width: 100%;
+}
+table.widefat {
+	margin-left: 0;
+	width: 100%;
+}
+@media only screen and (max-width: 960px) {
+	#header > div {
+	padding: 0 10px;
+}
+.quarter {
+	clear: both;
+	width: 100%;
+}
+.threequarters {
+	clear: both;
+	margin-left: 0;
+	width: 100%;
+}
+}

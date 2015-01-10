@@ -1,0 +1,216 @@
+/*box.css*/
+
+.total-box-container{
+	height: 480px;
+	width: 960px;
+	margin: 0px auto;
+}
+
+.total-box{
+	position: absolute;
+	height: 480px;
+	width: 960px;
+	margin: 0px auto;
+	background-color: #ffffff;
+	text-align: center;
+}
+
+.total-box a{
+	float: left;
+	border: 2px solid #fff;
+	margin: 1px;
+	background-color: #000;
+}
+
+.box-container{
+	width: 320px;
+	height: 480px;
+	background-color: transparent;
+	float: left;
+}
+
+.box-01{
+	width: 320px;
+	height: 80px;
+	background-color: transparent;
+	float: left;
+}
+
+.box-02{
+	width: 80px;
+	height: 240px;
+	background-color: transparent;
+	float: left;
+}
+
+.box-03{
+	width: 80px;
+	height: 160px;
+	background-color: transparent;
+	float: left;
+}
+
+.box-04{
+	width: 160px;
+	height: 160px;
+	background-color: transparent;
+	float: left;
+}
+
+.box-05{
+	width: 240px;
+	height: 240px;
+	background-color: transparent;
+	float: left;
+}
+
+.box-01 a, .box-02 a, .box-03 a {
+	width: 74px;
+	height: 74px;
+}
+
+.box-04 a, .box-b{
+	width: 154px;
+	height: 154px;
+}
+
+.box-05 a{
+	width: 234px;
+	height: 234px;
+}
+
+.box-info{
+	width: 120px;
+	height: 160px;
+	float: left;
+}
+
+#sorting p{
+	display: inline;
+}
+
+.box-info a{
+	width: 114px;
+	height: 114px;
+	display: block;
+}
+
+.box-info p{
+	font-size: 20px;
+	height: 20px;
+	width: 116px;
+	float: left;
+}
+
+.box_info img{
+	position: absolute;
+}
+
+img{
+	width: 100%;
+	height: 100%;
+}
+
+.info .control {
+	position: absolute;
+	top: 370px;
+	left: 310px;
+}
+.info .control a {
+	display: inline-block;
+	padding: 3px;
+	margin: 0 3px;
+	width: 16px;
+	color: #fff;
+	background: #000;
+	text-align: center;
+	font-size: 16px;
+	text-decoration: none;
+}
+.info .control a.on {
+	font-weight: bold;
+	color: #f00;
+}
+
+
+/*container-01*/
+.container-01 a:nth-child(1),
+.container-01 a:nth-child(2),
+.container-01 a:nth-child(3),
+.container-01 a:nth-child(4),
+.container-01 a:nth-child(6),
+.container-01 a:nth-child(7),
+.container-01 a:nth-child(8),
+.container-01 a:nth-child(10),
+.container-01 a:nth-child(11),
+.container-01 a:nth-child(12),
+.container-01 a:nth-child(13){
+	width: 74px;
+	height: 74px;
+}
+
+.container-01 a:nth-child(9){
+	width: 154px;
+	height: 154px;
+}
+
+.container-01 a:nth-child(5){
+	width: 234px;
+	height: 234px;
+}
+
+/*container-02*/
+.container-02{
+	float: left;
+}
+
+.container-02 a:nth-child(1),
+.container-02 a:nth-child(3),
+.container-02 a:nth-child(4),
+.container-02 a:nth-child(5),
+.container-02 a:nth-child(6),
+.container-02 a:nth-child(7),
+.container-02 a:nth-child(8),
+.container-02 a:nth-child(9),
+.container-02 a:nth-child(10),
+.container-02 a:nth-child(12),
+.container-02 a:nth-child(13){
+	width: 74px;
+	height: 74px;
+}
+
+.container-02 a:nth-child(2){
+	width: 154px;
+	height: 154px;
+}
+
+.container-02 a:nth-child(11){
+	width: 234px;
+	height: 234px;
+}
+
+/*container-01*/
+.container-03 a:nth-child(1),
+.container-03 a:nth-child(2),
+.container-03 a:nth-child(3),
+.container-03 a:nth-child(4),
+.container-03 a:nth-child(6),
+.container-03 a:nth-child(7),
+.container-03 a:nth-child(8),
+.container-03 a:nth-child(10),
+.container-03 a:nth-child(11),
+.container-03 a:nth-child(12),
+.container-03 a:nth-child(13){
+	width: 74px;
+	height: 74px;
+}
+
+.container-03 a:nth-child(5){
+	width: 154px;
+	height: 154px;
+}
+
+.container-03 a:nth-child(9){
+	width: 234px;
+	height: 234px;
+}
