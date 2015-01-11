@@ -1,4 +1,8 @@
 <?php
+register_shutdown_function( "fatal_handler" );
+function fatal_handler() {
+    print_r(error_get_last());
+}
 require_once '../../inc/config.php';
 require_once '../../n2h_core/class/n2hDatabaseWrapper.php';
 
