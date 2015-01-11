@@ -3,10 +3,9 @@ ncku2hand
 ncku2hand front-end
 
 ## TODO
-- 做清單檢視
 - HTML用PHP生
-- 最後更新時間
 - 改良INC
+- search
 - FB登入+特權存取
 
 ## 前端

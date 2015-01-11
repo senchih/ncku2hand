@@ -15,6 +15,9 @@
         
         <!-- list style -->
         <link rel="stylesheet" href="css/forums.css" type="text/css">
+        <!-- list js -->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/list.js"></script>
     </head>    
     
     <body id="front-page">
@@ -45,7 +48,7 @@
                         </li>
                         <li class="menu-btn">
                             <a href="n2hl.htm" title="登出">
-                                LogOut FB Account
+                                LogOut
                             </a>
                         </li>
                     </ul>
@@ -72,7 +75,7 @@
             <div id="content" class="widecolumn">
                 <div id="notes">
                     <p>
-                        search item message: 
+                        search item message(still not available QQ): 
                     </p>
                     <form action="http://en.forums.wordpress.com/search.php" method="get" id="front-search">
                         <p>
@@ -88,44 +91,13 @@
                         <!-- item head-->
                         <thead>
                             <tr class="head">
-                                <th class="topictitle">Item ID</th>
-                                <th>Item fresh</th>
-                                <th>Update time</th>
-                                <th>Create time</th>
+                                <th style="width: 40%;">Item ID</th>
+                                <th style="width: 20%;">Seller</th>
+                                <th style="width: 20%;">Update time</th>
+                                <th style="width: 20%;">Create time</th>
                             </tr>
                         </thead>
-                        <tbody id="latest">
-                            <tr>
-                                <td class="topictitle">
-                                    qqqqqqqqqq
-                                </td>
-                                <td class="num" style="text-align:center;">
-                                    5
-                                </td>
-                                <td class="num last-poster">
-                                    annecumberbatch
-                                </td>
-                                <td class="num freshness">
-                                    eeeeeeeeeeeeeeee
-                                </td>
-                            </tr>
-                            <tr class="alt">
-                                <td class="topictitle">
-                                    <a href="http://en.forums.wordpress.com/topic/google-integration-1">
-                                        aaaaaaaaaaaaaaaa
-                                    </a>
-                                </td>
-                                <td class="num" style="text-align:center;">
-                                    1
-                                </td>
-                                <td class="num last-poster">
-                                    luxeradar
-                                </td>
-                                <td class="num freshness">
-                                    fffffffffffffff
-                                </td>
-                            </tr>
-                        </tbody>
+                        <tbody id="list"><!-- ajax will fill here--></tbody>
                         <!-- item end-->
                     </table>
                 </div>

@@ -35,6 +35,9 @@ table.widefat thead {
 table.widefat tbody {
 	margin-bottom: 24px;
 }
+table.widefat tbody tr:hover {
+	background-color: #efe;
+}
 table.widefat td, table.widefat th {
 	font-size: 12px;
 	padding: 6px;
@@ -303,7 +306,7 @@ p.pages {
 }
 #forumlist tbody tr.head th,
 table.widefat th {
-	font-size: 10px;
+	font-size: 15px;
 	font-weight: 500;
 	padding-bottom: 7px;
 }
@@ -334,7 +337,7 @@ ul#views {
 	list-style: none;
 	display: inline;
 }
-.topictitle h2, #tos_violation h2 {
+#tos_violation h2 {
 	font-size: 30px;
 	line-height: 1.2em;
 	color: #444;
@@ -351,9 +354,6 @@ h2.post-form + p {
 }
 h2.post-form a {
 	border: none;
-}
-.topictitle .col-9 {
-	margin-left: 255px;
 }
 #thread {
 	list-style: none;
@@ -812,9 +812,6 @@ h2.post-form {
 .last-poster {
 	max-width: 150px;
 	overflow: hidden;
-}
-.topictitle {
-	font-size: 13px !important;
 }
 .freshness {
 	min-width: 80px;
