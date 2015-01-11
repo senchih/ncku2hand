@@ -9,6 +9,13 @@ var info_display = [];
 /*image format*/
 var img_defaultZ = 10;
 
+$(document).ready(function(){ // hover
+    $("#slide1").hover(function(){$("#drop1").slideDown("fast");});
+    $("#slide1").mouseleave(function(){$("#drop1").slideUp("fast");});
+    $("#slide2").mouseenter(function(){$("#drop2").slideDown("fast");});
+    $("#slide2").mouseleave(function(){$("#drop2").slideUp("fast");});	
+});
+
 $(document).ready(function() {
 	overview_page(0);	//overview page
 	$(".fancybox").fancybox({

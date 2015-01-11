@@ -138,11 +138,13 @@ p.bbcrumb a {
 	line-height: 1em;
 	margin-top: 20px;
 	margin-left: 10px;
+        text-align: right;
 }
 #notes p {
 	display: inline-block;
 	margin: 0;
 	font-size: 16px;
+	margin: 0px 15px 0px 0px;
 }
 #front-search {
 	display: inline-block;
@@ -153,7 +155,7 @@ p.bbcrumb a {
 	background: #fff;
 	border: 1px solid #cfcfcf;
 	padding: 2px 4px;
-	margin: 0 0 0 2px;
+	margin: 0px 0px 0px 2px;
 }
 #front-search input.inputButton {
 	font-size: 14px !important;
