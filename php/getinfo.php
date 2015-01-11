@@ -1,29 +1,13 @@
 <?php
-require_once '../config.php';
-require_once 'n2hDatabaseWrapper.php';
+require_once '../../inc/config.php';
+require_once '../../n2h_core/class/n2hDatabaseWrapper.php';
 
 //Connect to DB
 $dbHandler = new n2hDatabaseWrapper(
-        $dbServer, 
-        $dbUser, 
-        $dbPassword, 
-        $dbName
+        $_ncku2hand['dbServerName'], 
+        $_ncku2hand['dbUserName'], 
+        $_ncku2hand['dbPassword'], 
+        $_ncku2hand['dbName']
         );
 
-
-
-$result = $dbHandler->mysqli->query("
-    SELECT image_id, item_id
-        FROM images
-        ORDER BY RAND( )
-        LIMIT 36"
-        );
-
-$i = 0;
-$data = array();
-while($row = $result->fetch_array()) {
-    $data[$i] = $row;
-    $i++;
-}
-
-echo json_encode($data);
+echo json_encode($dbHandler->getRandomImages(36));

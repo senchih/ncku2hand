@@ -6,7 +6,7 @@ ncku2hand front-end
 - 做清單檢視
 - HTML用PHP生
 - 最後更新時間
-- 改良CONFIG INC
+- 改良INC
 - FB登入+特權存取
 
 ## 前端

@@ -16,6 +16,7 @@ table.widefat {
 	margin-bottom: 24px !important;
 	margin-left: 4px;
 	color: #444;
+        background-color: white;
 }
 .col-12 table.widefat {
 	width: 948px;

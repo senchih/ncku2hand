@@ -1,14 +1,5 @@
 /*css*/
 @import url(http://fonts.googleapis.com/css?family=Nothing+You+Could+Do);
-
-html, body{
-	margin: 0px auto;
-}
-
-body{
-	background-color: #C9EDDB;
-}
-
 *{
 	margin:0;
 	padding:0;
@@ -46,9 +37,10 @@ table{
 }
 
 #title{
-	letter-spacing: 12px;
-	font-size: 70px;
+	letter-spacing: 5px;
+	font-size: 50px;
 	font-family: 'Nothing You Could Do', cursive;
+        text-align: right;
 }
 
 /*menu*/
