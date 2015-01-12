@@ -14,20 +14,24 @@
         <link rel="stylesheet" href="css/main.css" type="text/css">
         <link rel="stylesheet" href="css/header.css" type="text/css">
         
-        <!-- box style -->
-        <link rel="stylesheet" href="box_css/style.css">
-        <link rel="stylesheet" href="box_css/box.css">
-        <link rel="stylesheet" href="box_css/hover.css">
-        
-        <!-- box js -->
+        <!-- general js -->
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="../inc/config.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
         
+        <!-- sort style -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/box.css">
+        <link rel="stylesheet" href="css/hover.css">
+        
+        <!-- sort js -->
+        <script type="text/javascript" src="js/sort.js"></script>
+        
         <!-- fancybox -->
-        <link rel="stylesheet" href="src/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
-        <script type="text/javascript" src="src/fancybox/jquery.fancybox.pack.js"></script>
-        <link rel="stylesheet" href="src/fancybox/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
-        <script type="text/javascript" src="src/fancybox/helpers/jquery.fancybox-thumbs.js"></script>
+        <link rel="stylesheet" href="../inc/src/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+        <script type="text/javascript" src="../inc/src/fancybox/jquery.fancybox.pack.js"></script>
+        <link rel="stylesheet" href="../inc/src/fancybox/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
+        <script type="text/javascript" src="../inc/src/fancybox/helpers/jquery.fancybox-thumbs.js"></script>
         
     </head>     
         
@@ -67,33 +71,6 @@
             </div>
         </header>
         <!-- menubar end-->
-        
-        <div class="page-wrapper" >     
-            <nav class="narrow">
-                <button type="button"><img class="left" src="img/narrowL.png"></button>
-                <button type="button"><img  class="right"src="img/narrowR.png"></button>
-            </nav>
-            
-            <div class="back">
-                
-                <!-- header -->
-                <div id="header">
-                    <p id="title">Ncku2Hand</p>
-                </div>
-            
-                <!-- main -->
-                <div class="main-wrapper">
-                    
-                    <nav id="main">
-                        <div class="total-box-container">   
-                                            
-                            <div class="total-box" id="overview"></div>
-                        </div>  
-                    </nav>
-                </div>
-            </div>
-            
-        </div>
         
     </body>
         

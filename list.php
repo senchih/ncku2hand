@@ -1,30 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <meta charset = "UTF-8"/>
         <title>《成大限定》Market版 二手交流買賣</title>
-        <meta name = "keywords" content="二手,以物易物,賣東西,成大,找東西,MARKET,撿便宜,送東西,轉讓,學生優惠" />
-        <meta name = "description" content ="成大二手交易平台">
-        <meta name="google-site-verification" content="FZYyLmFWc4gAz8YRKjCU7sbaVeoTCBGbncqHK7wyt8A" />
-        <link rel="shortcut icon" href="favicon.ico">
-        
-        <!-- mainbar style -->
-        <link rel="stylesheet" href="css/main.css" type="text/css">
-        <link rel="stylesheet" href="css/header.css" type="text/css">
-        
-        <!-- list style -->
-        <link rel="stylesheet" href="css/forums.css" type="text/css">
-        <!-- list js -->
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="js/list.js"></script>
-    </head>    
+        <?php
+        $pageType = 'list';
+        require 'php/header_gen.php';
+        ?>
+    </head>
     
     <body id="front-page">
         <script>
             window.fbAsyncInit = function() {
                 FB.init({
-                    appId      : '445864758894641',
+                    appId      : _ncku2hand.appId,
                     xfbml      : false,
                     version    : 'v2.2'
                 });
@@ -59,41 +47,10 @@
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
         </script>
-        <!-- menubar head-->
-        <header class="toolbar wpcom-masterbar wpcom-forums wpcom-header" role="banner">
-            <div class="wpcom-navigation site-navigation wpcom-nav" role="navigation">
-                <h1 class="wpcom-title">
-                    <a href="http://localhost/NCKU-Second-Hand/">
-                        <span>
-                            NCKU2HAND
-                        </span>
-                    </a>
-                </h1>
-                <nav id="main-nav" class="wpcom-pages" role="navigation">
-                    <a class="menu-toggle">
-                        Menu
-                    </a>
-                    <ul class="pages-menu">
-                        <li class="menu-btn">
-                            <a href="box.html" title="圖片檢視">
-                                PicView
-                            </a>
-                        </li>
-                        <li class="menu-btn current">
-                            <a href="list.html" title="清單檢視">
-                                ListView
-                            </a>
-                        </li>
-                        <li class="menu-btn">
-                            <a href="n2hl.htm" title="登出">
-                                LogOut
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <!-- menubar end-->
+        
+        <?php
+        require 'php/toolbar_gen.php';
+        ?>
         
         <!-- topbar head-->
         <div id="header" class="logged-out">
@@ -136,7 +93,7 @@
                     </table>
                 </div>
                 <div id="list-tail">
-                    <p>Older Item</p>
+                    <p></p>
                 </div>
             </div>
             

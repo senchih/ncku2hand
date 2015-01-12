@@ -114,7 +114,7 @@ function shrinkMessage(message) {
 }
 
 function resetTail() {
-    $("#list-tail p").replaceWith("<p>Older Item</p>");
+    $("#list-tail p").replaceWith("<p>Load More...</p>");
     $("#list-tail").unbind();
     $("#list-tail").click(function(){
         appendItems(lastItemId);
