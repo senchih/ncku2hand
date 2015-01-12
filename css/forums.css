@@ -126,6 +126,14 @@ p.bbcrumb a {
 	color: #666;
 	margin-bottom: 0;
 }
+#list-tail {
+	background: #777;
+        text-align:center;
+}
+#list-tail p{
+        font-size: 20px;
+        color: white;
+}
 #notes {
 	float: none;
 	width: 950px;
@@ -142,6 +150,9 @@ p.bbcrumb a {
 	margin-top: 20px;
 	margin-left: 10px;
         text-align: right;
+	box-sizing: border-box;
+	margin-left: 0;
+	width: 100%;
 }
 #notes p {
 	display: inline-block;
@@ -980,11 +991,6 @@ p.private-forum-warning {
 	height: 0;
 	clear: both;
 	visibility: hidden;
-}
-#notes {
-	box-sizing: border-box;
-	margin-left: 0;
-	width: 100%;
 }
 .quarter {
 	float: left;

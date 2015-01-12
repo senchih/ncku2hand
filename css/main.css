@@ -36,10 +36,10 @@ p {
     overflow: hidden;
     margin: 0px auto;
 }
-body, input[type="submit"], input[type="text"] {
+body, input[type="button"], input[type="text"] {
     font-family: "Open Sans","Helvetica Neue",sans-serif;
 }
-input[type="submit"] {
+input[type="button"] {
     line-height: 1em;
 }
 th {

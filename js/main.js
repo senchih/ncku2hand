@@ -33,15 +33,7 @@ $(document).ready(function() {
 });
 
 function overview_page(offset){
-	$.ajax({
-		type: "GET",
-		url: "php/get.php",
-                dataType: "json",
-                data: {action: "getRandomImages"}, 
-		error: function(){
-			alert('overview fault');
-		},
-		success: function(data){
+	$.post( "php/get.php", {action: "getRandomImages"}, function(data){
 			var amount = 0;
 			var $overview = $("#overview");
 			var tags = "", info_tags="";
@@ -62,7 +54,7 @@ function overview_page(offset){
 						if(amount >= data.length)break;//exception
 						
 						//for(l=0; l<3; l++)
-							tags += '<a class="fancybox" href="#info"><img class="shrink z" src="php/get.php?action=getImageById&id='+data[amount]["image_id"]+'"></a>';
+							tags += '<a class="fancybox" href="#info"><img class="shrink z" src="php/image.php?id='+data[amount]["image_id"]+'"></a>';
 						
 						amount++;
 					}
@@ -76,7 +68,7 @@ function overview_page(offset){
 			tags += '</ul>';
 			$overview.append(tags);
 		}
-	});
+	,"json");
 }
 /*img display*/
 function sw(id, num){

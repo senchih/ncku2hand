@@ -21,6 +21,44 @@
     </head>    
     
     <body id="front-page">
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId      : '534577219978353',
+                    xfbml      : false,
+                    version    : 'v2.2'
+                });
+                FB.getLoginStatus(function(response) {
+                    if (response.status === 'connected') {
+                        console.log('Logged in.');
+                        resetTail();
+                        appendItems(0);
+                        $("#front-search .inputButton").click(doSearch);
+                        $(".list-item td").mouseover(function(){
+                            console.log("kk");
+                        });
+                        FB.api('/10204480122937657', function(response) {
+                            $(".iattr1").each(function(){
+                                var $each = $(this);
+                                FB.api('/'+$each.text(), function(response) {
+                                    $each.replaceWith('<td class="iattr1">'+response.name+'</td>');
+                                });
+                            });
+                        });
+                    } else {
+                        FB.login();
+                    }
+                });
+            };
+            
+            (function(d, s, id){
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/zh_TW/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
         <!-- menubar head-->
         <header class="toolbar wpcom-masterbar wpcom-forums wpcom-header" role="banner">
             <div class="wpcom-navigation site-navigation wpcom-nav" role="navigation">
@@ -59,13 +97,11 @@
         
         <!-- topbar head-->
         <div id="header" class="logged-out">
-            <div>
-                <div class="forums-intro">
-                    <p>
-                        Welcome to <strong>NCKU 2 Hand</strong>!
-                    </p>
-                </div>
-                
+            <div style="max-width: 100%; width: 100px;">
+                <img src="img/1.png" alt="自己的" style="width: 30%;">
+                <img src="img/2.png" alt="東西" style="width: 30%;">
+                <img src="img/3.png" alt="自己" style="width: 20%;">
+                <img src="img/4.png" alt="買" style="width: 15%;">
             </div>
         </div>
         <!-- topbar end-->
@@ -75,14 +111,12 @@
             <div id="content" class="widecolumn">
                 <div id="notes">
                     <p>
-                        search item message(still not available QQ): 
+                        Find Your Treasure 
                     </p>
-                    <form action="http://en.forums.wordpress.com/search.php" method="get" id="front-search">
+                    <form id="front-search">
                         <p>
-                            <input class="text" size="30" maxlength="100" name="q" value="type keyword" 
-                                   onfocus="this.value=(this.value=='type keyword') ? '' : this.value;" 
-                                   onblur="this.value=(this.value=='') ? 'type keyword' : this.value;" type="text">
-                            <input value="Search" class="inputButton" type="submit">
+                            <input class="text" size="30" maxlength="100" type="text">
+                            <input value="Search" class="inputButton" type="button">
                         </p>
                     </form>
                 </div>
@@ -91,8 +125,8 @@
                         <!-- item head-->
                         <thead>
                             <tr class="head">
-                                <th style="width: 40%;">Item ID</th>
                                 <th style="width: 20%;">Seller</th>
+                                <th style="width: 40%;">Item ID</th>
                                 <th style="width: 20%;">Update time</th>
                                 <th style="width: 20%;">Create time</th>
                             </tr>
@@ -101,11 +135,14 @@
                         <!-- item end-->
                     </table>
                 </div>
-                
+                <div id="list-tail">
+                    <p>Older Item</p>
+                </div>
             </div>
             
         </div>
         <!-- content end-->
+        <div id="fb-root"></div>
     </body>
 
 </html>

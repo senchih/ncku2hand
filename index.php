@@ -12,7 +12,7 @@ and open the template in the editor.
     <body>
         <?php
         // include libs
-        register_shutdown_function( "fatal_handler" );
+        register_shutdown_function("fatal_handler");
         function fatal_handler() {
             print_r(error_get_last());
         }
