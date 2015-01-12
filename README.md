@@ -9,3 +9,4 @@ ncku2hand front-end
 - 回到FB工具列
 - ID更新好像不會碰到舊文?(改側山文
 - ENTER搜尋
+- 檔案說明 安裝說明
