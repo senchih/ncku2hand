@@ -13,7 +13,8 @@ echo '
                 </a>
                 <ul class="pages-menu">';
 
-printButton("box.php", "圖片檢視", "PicView", $pageType=='box');
+printButton("box.php", "圖片檢視", "BoxView", $pageType=='box');
+printButton("sort.php", "排序檢視", "SortView", $pageType=='sort');
 printButton("list.php", "清單檢視", "ListView", $pageType=='list');
 printButton("box.php", "登出", "LogOut", false);
 

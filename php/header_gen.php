@@ -20,15 +20,17 @@ echo '
 switch ($pageType) {
     case 'box':
         echo '
-            <link rel="stylesheet" href="css/style.css">
-            <link rel="stylesheet" href="css/box.css">
-            <link rel="stylesheet" href="css/hover.css">
-            <script type="text/javascript" src="js/box.js"></script>';
+                <link rel="stylesheet" href="css/style.css">
+                <link rel="stylesheet" href="css/box.css">
+                <link rel="stylesheet" href="css/hover.css">
+                <script type="text/javascript" src="js/box.js"></script>';
         break;
     case 'sort':
         echo '
-                <link rel="stylesheet" href="css/forums.css" type="text/css">
-                <script type="text/javascript" src="js/list.js"></script>';
+                <link rel="stylesheet" href="css/style.css">
+                <link rel="stylesheet" href="css/box.css">
+                <link rel="stylesheet" href="css/hover.css">
+                <script type="text/javascript" src="js/sort.js"></script>';
         break;
     case 'list':
         echo '
