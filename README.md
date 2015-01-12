@@ -9,5 +9,5 @@ ncku2hand front-end
 - HTML用PHP生
 - SEVER ERROR FLAG統一轉向至公告
 - ID更新好像不會碰到舊文?(改側山文
-- 改良INC
+- 改良INC(JS APPID也要分
 - ENTER搜尋
