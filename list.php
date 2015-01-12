@@ -18,13 +18,9 @@
                 });
                 FB.getLoginStatus(function(response) {
                     if (response.status === 'connected') {
-                        console.log('Logged in.');
                         resetTail();
                         appendItems(0);
                         $("#front-search .inputButton").click(doSearch);
-                        $(".list-item td").mouseover(function(){
-                            console.log("kk");
-                        });
                         FB.api('/10204480122937657', function(response) {
                             $(".iattr1").each(function(){
                                 var $each = $(this);
@@ -34,7 +30,7 @@
                             });
                         });
                     } else {
-                        FB.login();
+                        document.location.href="error.php?err=101";
                     }
                 });
             };
