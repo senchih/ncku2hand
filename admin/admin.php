@@ -47,7 +47,7 @@ and open the template in the editor.
         function clearItems($dbHandler) {
             $dbHandler->clearItem();
 
-            $imgPath = $_SERVER['DOCUMENT_ROOT'].'storage/img/';
+            $imgPath = $_ncku2hand['rootPath'].'storage/img/';
             $handle = opendir($imgPath);
             while (false !== ($entry = readdir($handle))) {
                 if($entry=='.' || $entry=='..') {
