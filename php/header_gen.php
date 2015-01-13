@@ -59,7 +59,7 @@ if($pageType=='box' || $pageType=='sort') {
 
 // include libs
 
-require_once '../../inc/config.php';
+require_once '../inc/config.php';
 require_once $_ncku2hand['rootPath'].'n2h_core/class/n2hDatabaseWrapper.php';
 require_once $_ncku2hand['rootPath'].'n2h_core/class/n2hFacebookConnector.php';
 require_once $_ncku2hand['rootPath'].'n2h_core/class/updateManager.php';
