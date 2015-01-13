@@ -1,4 +1,9 @@
 <?php
+//always report php error
+register_shutdown_function("fatal_handler");
+function fatal_handler() {
+    print_r(error_get_last());
+}
 // print general information
 echo '
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -18,6 +23,10 @@ echo '
 
 // print stylesheet & js for each page
 switch ($pageType) {
+    case 'index':
+        echo '
+                <link rel="stylesheet" href="css/welcome.css">';
+        break;
     case 'box':
         echo '
                 <link rel="stylesheet" href="css/style.css">
@@ -46,4 +55,47 @@ if($pageType=='box' || $pageType=='sort') {
             <script type="text/javascript" src="../inc/src/fancybox/jquery.fancybox.pack.js"></script>
             <link rel="stylesheet" href="../inc/src/fancybox/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
             <script type="text/javascript" src="../inc/src/fancybox/helpers/jquery.fancybox-thumbs.js"></script>';
+}
+
+// include libs
+require_once $_SERVER['DOCUMENT_ROOT'].'inc/config.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'n2h_core/class/n2hDatabaseWrapper.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'n2h_core/class/n2hFacebookConnector.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'n2h_core/class/updateManager.php';
+
+$dbHandler = new n2hDatabaseWrapper(
+        $_ncku2hand['dbServerName'], 
+        $_ncku2hand['dbUserName'], 
+        $_ncku2hand['dbPassword'], 
+        $_ncku2hand['dbName']
+        );
+
+$user = filter_input(INPUT_COOKIE, 'user_code');
+$isAdmin = $dbHandler->isAdmin($user);
+$isUser = $dbHandler->isUser($user);
+$firstName = $dbHandler->getUserFirstName($user);
+$systemHealthy = $dbHandler->systemHealthy();
+
+if(!$systemHealthy && !($pageType=='admin')) {
+    header('Location: http://syoukore.github.io/NCKU2hand-Bulletin/');
+    exit();
+}
+
+if($pageType=='admin' && !$isAdmin) {
+    header('Location: ../index.php?redirect=true');
+    exit();
+}
+
+if(!$isUser && $pageType!='index') {
+    header('Location: index.php?redirect=true');
+    exit();
+}
+
+if($pageType=='index' || $pageType=='admin') {
+    session_start();
+    $fbHandler = new n2hFacebookConnector(
+            $_ncku2hand['fbAppId'],
+            $_ncku2hand['fbAppSecret'],
+            $_ncku2hand['fbRedirectUri']
+            );
 }

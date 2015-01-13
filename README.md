@@ -3,10 +3,6 @@ ncku2hand
 ncku2hand front-end
 
 ## TODO
-- 管理後台做到前端
-- FB登入更新USER+特權存取
-- SEVER ERROR FLAG統一轉向至公告
-- 回到FB工具列
-- ID更新好像不會碰到舊文?(改側山文
-- ENTER搜尋
+- 判斷社團成員(現在所有人都SUPER
+- 整理CONFIG(檢查所有路徑
 - 檔案說明 安裝說明

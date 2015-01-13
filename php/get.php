@@ -3,8 +3,8 @@ register_shutdown_function("fatal_handler");
 function fatal_handler() {
     print_r(error_get_last());
 }
-require_once '../../inc/config.php';
-require_once '../../n2h_core/class/n2hDatabaseWrapper.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'inc/config.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'n2h_core/class/n2hDatabaseWrapper.php';
 
 //Connect to DB
 $dbHandler = new n2hDatabaseWrapper(
@@ -18,12 +18,17 @@ $requestType = filter_input(INPUT_POST, 'action');
 switch($requestType) {
     case "getItemsByCursor":
         $cursor = filter_input(INPUT_POST, 'cursor');
+        $limit = filter_input(INPUT_POST, 'limit');
         $filter = json_decode(filter_input(INPUT_POST, 'filter'));
         if($cursor) {
-            echo json_encode($dbHandler->getFilteredItemsAfterId(5, $filter, $cursor));
+            $result = $dbHandler->getFilteredItemsAfterId($limit, $filter, $cursor);
         } else {
-            echo json_encode($dbHandler->getFilteredItemsAfterId(30, $filter));
+            $result = $dbHandler->getFilteredItemsAfterId($limit, $filter);
         }
+        foreach ($result as &$item) {
+            $item['item_message'] = str_replace("\n", "<br>", $item['item_message']);
+        }
+        echo json_encode($result);
         break;
         
     case "getRandomImages":

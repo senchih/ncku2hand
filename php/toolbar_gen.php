@@ -13,11 +13,19 @@ echo '
                 </a>
                 <ul class="pages-menu">';
 
-printButton("box.php", "圖片檢視", "BoxView", $pageType=='box');
-printButton("sort.php", "排序檢視", "SortView", $pageType=='sort');
-printButton("list.php", "清單檢視", "ListView", $pageType=='list');
-printButton("box.php", "登出", "LogOut", false);
+if($isAdmin) {
+    printButton("admin/admin.php", "後台", "Admin", $pageType=='admin');
+}
 
+if($isUser) {
+    printButton("box.php", "圖片檢視", "BoxView", $pageType=='box');
+    printButton("sort.php", "排序檢視", "SortView", $pageType=='sort');
+    printButton("list.php", "清單檢視", "ListView", $pageType=='list');
+    printButton("index.php?logout=true", "登出", "Logout Our App", false);
+    printButton("https://www.facebook.com/", "Facebook", "$firstName's Facebook", false);
+} else {
+    printButton("https://www.facebook.com/", "Facebook", "Return to Facebook", false);
+}
 echo '
                 </ul>
             </nav>

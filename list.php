@@ -19,7 +19,14 @@
                 FB.getLoginStatus(function(response) {
                     if (response.status === 'connected') {
                         resetTail();
-                        appendItems(0);
+                        appendItems(0, 20);
+                        $('#front-search .Field').keypress(function (e) {
+                            var key = e.which;
+                            if(key == 13) {
+                                $('#front-search .inputButton').click();
+                                return false;  
+                            }
+                        });   
                         $("#front-search .inputButton").click(doSearch);
                         FB.api('/10204480122937657', function(response) {
                             $(".iattr1").each(function(){
@@ -30,7 +37,7 @@
                             });
                         });
                     } else {
-                        document.location.href="error.php?err=101";
+                        document.location.href="php/error.php?err=101";
                     }
                 });
             };
@@ -68,7 +75,7 @@
                     </p>
                     <form id="front-search">
                         <p>
-                            <input class="text" size="30" maxlength="100" type="text">
+                            <input class="Field" size="30" maxlength="100" type="text">
                             <input value="Search" class="inputButton" type="button">
                         </p>
                     </form>

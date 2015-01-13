@@ -7,12 +7,9 @@
         $pageType = 'sort';
         require 'php/header_gen.php';
         ?>
-        
-        <!-- fancybox -->
-        
     </head>     
         
-    <body id="front-page">
+    <body>
         <?php
         require 'php/toolbar_gen.php';
         ?>

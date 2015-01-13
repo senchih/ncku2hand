@@ -11,22 +11,22 @@ var filter;
 var doSearch = function(){
     $("").replaceAll(".list-item");
     resetTail();
-    var tmp = $.trim($("#front-search .text").val()).split(" ");
+    var tmp = $.trim($("#front-search .Field").val()).split(" ");
     for(var i = 0; i<tmp.length; i++) {
         tmp[i] = "%" + tmp[i] + "%";
     }
-    appendItems(0, tmp);
+    appendItems(0, 20, tmp);
     $("#list-tail").unbind();
     $("#list-tail").click(function(){
-        appendItems(lastItemId, tmp);
+        appendItems(lastItemId, 5, tmp);
     });
 };
 
-function appendItems(cursor, filter) {
+function appendItems(cursor, limit, filter) {
     var jsonFilter = JSON.stringify(filter);
     $.post(
         "php/get.php",
-        {action: "getItemsByCursor", cursor: cursor, filter: jsonFilter},
+        {action: "getItemsByCursor", cursor: cursor, limit: limit, filter: jsonFilter},
         function(data){
             for(itemIndex = 0; itemIndex<data.length; itemIndex++) {
                 addItemToList(
@@ -117,6 +117,6 @@ function resetTail() {
     $("#list-tail p").replaceWith("<p>Load More...</p>");
     $("#list-tail").unbind();
     $("#list-tail").click(function(){
-        appendItems(lastItemId);
+        appendItems(lastItemId, 5);
     });
 }

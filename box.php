@@ -7,9 +7,6 @@
         $pageType = 'box';
         require 'php/header_gen.php';
         ?>
-        
-        <!-- fancybox -->
-        
     </head>     
         
     <body id="front-page">
