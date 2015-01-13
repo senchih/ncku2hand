@@ -59,6 +59,8 @@
 	</div>
 	
 	<footer> 2015 by 楊耘臺 楊璇衛 蕭翔之 蔡森至 (NCKU EE web-design)</footer>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </body>
 
 </html>
